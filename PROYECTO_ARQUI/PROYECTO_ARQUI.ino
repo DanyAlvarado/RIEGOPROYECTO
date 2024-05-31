@@ -194,8 +194,11 @@ void mostrar_mediciones() {
 
   if (lluvia < lluviaSetPoint) {
     digitalWrite(pinRelaySuelo, LOW);
-    lcd_i2c.setCursor(0, 4);
+    lcd_i2c.clear();
+    lcd_i2c.setCursor(0, 0);
     lcd_i2c.println("Se ha detectado lluvia.");
+    lcd_i2c.setCursor(0, 2);
+    lcd_i2c.println("El riego se activara despues");
   }
 
   delay(1000);
